@@ -77,23 +77,12 @@ http://localhost:5000
 
 ## 動作画面
 
-実行後の画面のスクリーンショットをここへ貼り付けてください。
+以下は Study Tracker の実行画面です。
 
-例
+![Study Trackerの実行画面](docs/screenshot.png)
 
-```
-docs/screenshot.png
-```
+この画面では、科目名と学習時間を入力して学習記録を追加できるほか、登録した学習記録の一覧と合計学習時間が表示されます。
 
-GitHubでは
-
-```markdown
-![画面](docs/screenshot.png)
-```
-
-と記述すると表示できます。
-
----
 
 ## ライセンス
 
