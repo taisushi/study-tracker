@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 Study Tracker</h1>
+
+    <form method="POST">
+        <label for="subject">科目名</label>
+        <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="例：ソフトウェア工学"
+            required
+        >
+
+        <label for="hours">学習時間（時間）</label>
+        <input
+            type="number"
+            id="hours"
+            name="hours"
+            min="1"
+            placeholder="例：2"
+            required
+        >
+
+        <button type="submit">追加</button>
+    </form>
+
+    <h2>学習記録</h2>
+
+    {% if records %}
+    <table>
+        <thead>
+            <tr>
+                <th>科目</th>
+                <th>時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.subject }}</td>
+                <td>{{ record.hours }} 時間</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>まだ学習記録がありません。</p>
+    {% endif %}
+
+    <h2>合計学習時間</h2>
+
+    <div class="total">
+        {{ total_hours }} 時間
+    </div>
+
+</div>
+
+</body>
+</html>

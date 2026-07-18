@@ -1,0 +1,9 @@
+services:
+  study-tracker:
+    build: .
+    container_name: study-tracker
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: unless-stopped
